@@ -11,7 +11,7 @@ const template = `<section class="logo" title="Угадай мелодию"><h1>
 Удачи!
 </p>`;
 
-const welcome = getElementFromTemplate(template);
+const welcome = getElementFromTemplate(template, `main`, `main--welcome`);
 
 let play = welcome.querySelector(`.main-play`);
 

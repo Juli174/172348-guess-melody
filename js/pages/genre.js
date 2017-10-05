@@ -85,7 +85,7 @@ style="filter: url(.#blur); transform: rotate(-90deg) scaleY(-1); transform-orig
   </form>
   </div>`;
 
-const genre = getElementFromTemplate(template);
+const genre = getElementFromTemplate(template, `main`, `main--level`, `main--level-genre`);
 
 const button = genre.querySelector(`.genre-answer-send`);
 button.setAttribute(`disabled`, `disabled`);

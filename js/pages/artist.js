@@ -60,7 +60,7 @@ alt="Lorde" width="134" height="134">
   </form>
   </div>`;
 
-const artist = getElementFromTemplate(template);
+const artist = getElementFromTemplate(template, `main`, `main--level`, `main--level-artist`);
 
 const answers = [...artist.getElementsByClassName(`main-answer`)];
 

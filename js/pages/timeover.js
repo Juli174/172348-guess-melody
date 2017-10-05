@@ -8,7 +8,7 @@ const tempalate = `<section class="logo" title="Угадай мелодию"><h1
 <div class="main-stat">Время вышло!<br>Вы не успели отгадать все мелодии</div>
 <span role="button" tabindex="0" class="main-replay">Попробовать ещё раз</span>`;
 
-const timeover = getElementFromTemplate(tempalate);
+const timeover = getElementFromTemplate(tempalate, `main`, `main--result`);
 
 const replay = timeover.querySelector(`.main-replay`);
 replay.addEventListener(`click`, () => {

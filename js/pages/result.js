@@ -11,7 +11,7 @@ const template = ` <section class="logo" title="Угадай мелодию"><h1
 <span class="main-comparison">Вы заняли 2 место из 10. Это&nbsp;лучше чем у&nbsp;80%&nbsp;игроков</span>
 <span role="button" tabindex="0" class="main-replay">Сыграть ещё раз</span>`;
 
-const result = getElementFromTemplate(template);
+const result = getElementFromTemplate(template, `main`, `main--result`);
 
 const replay = result.querySelector(`.main-replay`);
 
