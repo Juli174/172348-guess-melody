@@ -18,12 +18,6 @@ const countScore = (notes, answers) => {
       result -= 2;
     }
   });
-  const isWinCombination = (result > 0) && answers.every((answer) => {
-    return ((answer.result && (answer.time <= 30)) || (answer.result && (answer.time > 30)));
-  });
-  if ((notes > 0) && isWinCombination) {
-    return 10;
-  }
   return result;
 };
 
