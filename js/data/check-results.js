@@ -10,16 +10,16 @@ const countScore = (notes, answers) => {
     return -1;
   }
   answers.forEach((answer) => {
-    if (answer === 1) {
+    if (answer.result && (answer.time <= 30)) {
       result += 2;
-    } else if (answer === 2) {
+    } else if (answer.result && (answer.time > 30)) {
       result++;
-    } else if ((answer === 3) || (answer === 4)) {
+    } else if ((!answer.result && (answer.time <= 30)) || (!answer.result && (answer.time > 30))) {
       result -= 2;
     }
   });
   const isWinCombination = (result > 0) && answers.every((answer) => {
-    return (answer === 1) || (answer === 3);
+    return ((answer.result && (answer.time <= 30)) || (answer.result && (answer.time > 30)));
   });
   if ((notes > 0) && isWinCombination) {
     return 10;
