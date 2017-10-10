@@ -6,7 +6,12 @@ const countScore = (notes, answers) => {
   if (!answers || (answers.length === 0) || !Array.isArray(answers)) {
     return -1;
   }
-  if (((answers.length < 10) && notes === 0)) {
+  if (answers && answers.length < 10 && notes > 0) {
+    for (let i = 0; i < notes; i++) {
+      answers.push({result: true, time: false});
+    }
+  }
+  if (answers.length < 10) {
     return -1;
   }
   answers.forEach((answer) => {
@@ -18,6 +23,7 @@ const countScore = (notes, answers) => {
       result -= 2;
     }
   });
+
   return result;
 };
 
