@@ -1,3 +1,5 @@
+import {initialState} from './data/data.js';
+
 const displaySection = document.querySelector(`section.main`);
 
 let changeScreen = (node) => {
@@ -7,7 +9,6 @@ let changeScreen = (node) => {
     }
     displaySection.appendChild(node);
   }
-
 };
 
 export default changeScreen;
