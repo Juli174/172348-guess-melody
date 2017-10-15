@@ -1,17 +1,13 @@
 import getElementFromTemplate from '../../append-tempate.js';
-import changeScreen from '../../change-screen.js';
-import result from './../result.js';
-import attempts from './../attempts.js';
-import timeover from './../timeover.js';
+import {renderScreen} from '../../change-screen.js';
+import result, {winEvent} from './../result/result.js';
+import attempts, {attemptEvent} from './../result/attempts.js';
+import timeover, {timeoverEvent} from './../result/timeover.js';
 import infoTemplate from './../score.js';
 import {initialState, pages} from '../../data/data.js';
 import genreLevel from './genre-level.js';
 
-const renderGenre = () => {
-  const genre = getElementFromTemplate(genreLevel(pages.genre), `main`, `main--level`, `main--level-genre`);
-
-  changeScreen(genre);
-
+export const genreEvents = (genre) => {
   const button = genre.querySelector(`.genre-answer-send`);
   button.setAttribute(`disabled`, `disabled`);
   const melodies = [...genre.getElementsByClassName(`genre-answer`)];
@@ -22,7 +18,20 @@ const renderGenre = () => {
     });
   });
 
-  const results = [result, attempts, timeover];
+  const results = [
+    {
+      name: pages.win,
+      event: winEvent
+    },
+    {
+      name: pages.attempts,
+      event: attemptEvent
+    },
+    {
+      name: pages.timeover,
+      event: timeoverEvent
+    }
+  ];
 
   const min = 0;
   const max = 3;
@@ -37,7 +46,7 @@ const renderGenre = () => {
     /**
      * следующий экран определяется по аналогии с artist
      * */
-    changeScreen(results[ind]);
+    renderScreen(results[ind].name, results[ind].event);
   });
 };
 

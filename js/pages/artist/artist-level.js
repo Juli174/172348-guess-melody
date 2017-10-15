@@ -1,7 +1,8 @@
 import infoTemplate from '../score.js';
 import {initialState} from '../../data/data.js';
 
-const artistLevel = (state) => infoTemplate(initialState) + `
+const artistLevel = (state) => `<section class="main main--level main--level-artist">` +
+infoTemplate(initialState) + `
 <div class="main-wrap">
       <h2 class="title main-title">${state.title}</h2>
       <div class="player-wrapper">
@@ -26,6 +27,7 @@ const artistLevel = (state) => infoTemplate(initialState) + `
         `).join(``)}
       </form>
     </div>
+  </section>
 `;
 
 export default artistLevel;

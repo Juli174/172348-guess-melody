@@ -1,7 +1,8 @@
 import infoTemplate from '../score.js';
 import {initialState} from '../../data/data.js';
 
-const genreLevel = (state) => infoTemplate(initialState) + `
+const genreLevel = (state) => `<section class="main main--level main--level-genre">` +
+infoTemplate(initialState) + `
 <div class="main-wrap">
       <h2 class="title">Выберите инди-рок треки</h2>
       <form class="genre">
@@ -25,6 +26,7 @@ const genreLevel = (state) => infoTemplate(initialState) + `
         <button class="genre-answer-send" type="submit">Ответить</button>
       </form>
     </div>
+   </section>
 `;
 
 export default genreLevel;

@@ -19,9 +19,18 @@ export let initialState = {
 
 export let pages = {
   welcome: {
-
+    id: `welcome`,
+    title: `Угадай мелодию`,
+    play: `Начать игру`,
+    mainTitle: `Правила игры`,
+    text: new Set([
+      `Правила просты&nbsp;— за&nbsp;5 минут ответить на все вопросы.`,
+      `Ошибиться можно 3 раза.`,
+      `Удачи!`
+    ])
   },
   artist: {
+    id: `artist`,
     title: `Кто исполняет эту песню?`,
     melody: ``,
     answers: new Set([
@@ -40,6 +49,7 @@ export let pages = {
     ])
   },
   genre: {
+    id: `genre`,
     title: `Выберите инди-рок треки`,
     melodies: new Set([
       `https://www.youtube.com/audiolibrary_download?vid=91624fdc22fc54ed`,
@@ -47,5 +57,37 @@ export let pages = {
       `https://www.youtube.com/audiolibrary_download?vid=a127d9b7de8a17cf`,
       `https://www.youtube.com/audiolibrary_download?vid=dfb828f40096184c`
     ])
+  },
+  win: {
+    id: `result`,
+    topTitle: `Угадай мелодию`,
+    title: `Вы настоящий меломан!`,
+    stat: new Set([
+      `За&nbsp;3&nbsp;минуты и 25&nbsp;секунд`,
+      `вы&nbsp;набрали 12 баллов (8 быстрых)`,
+      `совершив 3 ошибки`
+    ]),
+    comparison: `Вы заняли 2 место из 10. Это&nbsp;лучше чем у&nbsp;80%&nbsp;игроков`,
+    replay: `Сыграть ещё раз`
+  },
+  attempts: {
+    id: `result`,
+    topTitle: `Угадай мелодию`,
+    title: `Увы и ах!`,
+    stat: new Set([
+      `Время вышло!`,
+      `Вы не успели отгадать все мелодии`
+    ]),
+    replay: `Попробовать ещё раз`
+  },
+  timeover: {
+    id: `result`,
+    topTitle: `Угадай мелодию`,
+    title: `Какая жалость!`,
+    stat: new Set([
+      `У вас закончились все попытки.`,
+      `Ничего, повезёт в следующий раз!`
+    ]),
+    replay: `Попробовать ещё раз`
   }
 };

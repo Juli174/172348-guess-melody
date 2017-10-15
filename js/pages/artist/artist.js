@@ -1,14 +1,10 @@
 import getElementFromTemplate from '../../append-tempate.js';
-import changeScreen from '../../change-screen.js';
-import renderGenre from './../genre/genre.js';
+import changeScreen, {renderScreen} from '../../change-screen.js';
+import renderGenre, {genreEvents} from './../genre/genre.js';
 import {initialState, pages} from '../../data/data.js';
 import artistLevel from './artist-level.js';
 
-const renderArtist = () => {
-  const artist = getElementFromTemplate(artistLevel(pages.artist), `main`, `main--level`, `main--level-artist`);
-
-  changeScreen(artist);
-
+export const artistEvents = (artist) => {
   const answers = [...artist.getElementsByClassName(`main-answer`)];
 
   answers.forEach((answer) => {
@@ -23,7 +19,8 @@ const renderArtist = () => {
        *   - количество нот = 3, переход к экрану поражения
        * */
       initialState.mistakes = 1;
-      renderGenre();
+      //renderGenre();
+      renderScreen(pages.genre, genreEvents);
     });
   });
 };
