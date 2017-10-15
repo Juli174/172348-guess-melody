@@ -1,4 +1,7 @@
-const genreLevel = (state) => `
+import infoTemplate from '../score.js';
+import {initialState} from '../../data/data.js';
+
+const genreLevel = (state) => infoTemplate(initialState) + `
 <div class="main-wrap">
       <h2 class="title">Выберите инди-рок треки</h2>
       <form class="genre">

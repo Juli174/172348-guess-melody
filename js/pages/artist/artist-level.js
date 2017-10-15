@@ -1,4 +1,7 @@
-const artistLevel = (state) => `
+import infoTemplate from '../score.js';
+import {initialState} from '../../data/data.js';
+
+const artistLevel = (state) => infoTemplate(initialState) + `
 <div class="main-wrap">
       <h2 class="title main-title">${state.title}</h2>
       <div class="player-wrapper">

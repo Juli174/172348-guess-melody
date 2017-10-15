@@ -11,4 +11,14 @@ let changeScreen = (node) => {
   }
 };
 
+
+export let newChangeScreen = (node, callback) => {
+  if (node) {
+    if (displaySection.firstChild) {
+      displaySection.removeChild(displaySection.firstChild);
+    }
+    displaySection.appendChild(node);
+  }
+  callback(node);
+};
 export default changeScreen;

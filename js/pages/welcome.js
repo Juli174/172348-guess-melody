@@ -1,6 +1,6 @@
 import getElementFromTemplate from '../append-tempate.js';
 import changeScreen from '../change-screen.js';
-import artist from './artist.js';
+import renderArtist from './artist/artist.js';
 
 const template = `<section class="logo" title="Угадай мелодию"><h1>Угадай мелодию</h1></section>
 <button class="main-play">Начать игру</button>
@@ -16,7 +16,7 @@ const welcome = getElementFromTemplate(template, `main`, `main--welcome`);
 let play = welcome.querySelector(`.main-play`);
 
 play.addEventListener(`click`, () => {
-  changeScreen(artist);
+  renderArtist();
 });
 
 export default welcome;
