@@ -6,6 +6,7 @@ import timeover, {timeoverEvent} from './../result/timeover.js';
 import infoTemplate from './../score.js';
 import {initialState, pages} from '../../data/data.js';
 import genreLevel from './genre-level.js';
+import {countScore} from '../count-score.js';
 
 export const genreEvents = (genre) => {
   const button = genre.querySelector(`.genre-answer-send`);
@@ -46,7 +47,8 @@ export const genreEvents = (genre) => {
     /**
      * следующий экран определяется по аналогии с artist
      * */
-    renderScreen(results[ind].name, results[ind].event);
+    countScore(0);
+    //renderScreen(results[ind].name, results[ind].event);
   });
 };
 

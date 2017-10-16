@@ -1,13 +1,23 @@
 import getElementFromTemplate from '../../append-tempate.js';
-import changeScreen, {renderScreen} from '../../change-screen.js';
+import {renderScreen} from '../../change-screen.js';
 import renderGenre, {genreEvents} from './../genre/genre.js';
-import {initialState, pages} from '../../data/data.js';
+import {initialState, pages, data} from '../../data/data.js';
 import artistLevel from './artist-level.js';
+import {countScore} from '../count-score.js';
+
+export const setArtistQuestion = () => {
+  let question = Math.floor(Math.random() * (data.length - 1));
+  pages.artist.answer = {
+    name: data[question].artist,
+    photo: data[question].image
+  };
+  pages.artist.melody = data[question].src;
+};
 
 export const artistEvents = (artist) => {
   const answers = [...artist.getElementsByClassName(`main-answer`)];
 
-  answers.forEach((answer) => {
+  answers.forEach((answer, i) => {
     answer.addEventListener(`click`, () => {
       /**
        * тут должна быть проверка правильности ответа
@@ -18,9 +28,7 @@ export const artistEvents = (artist) => {
        *   - количество нот < 3, переход к след экрану
        *   - количество нот = 3, переход к экрану поражения
        * */
-      initialState.mistakes = 1;
-      //renderGenre();
-      renderScreen(pages.genre, genreEvents);
+      countScore(i);
     });
   });
 };
