@@ -3,32 +3,32 @@ export let initialState = {
   get page() {
     return this._page;
   },
-  set page (num) {
+  set page(num) {
     this._page += num;
   },
-  setPage (num) {
+  setPage(num) {
     this._page = num;
   },
-  minutes: '05',
-  seconds: '00',
+  minutes: `05`,
+  seconds: `00`,
   _mistakes: 2,
-  get mistakes () {
+  get mistakes() {
     return this._mistakes;
   },
-  set mistakes (count) {
+  set mistakes(count) {
     this._mistakes += count;
   },
-  setMistakes (num) {
+  setMistakes(num) {
     this._mistakes = num;
   },
   _score: 0,
-  get score () {
+  get score() {
     return this._score;
   },
-  set score (res) {
+  set score(res) {
     this._score += res;
   },
-  setScore (num) {
+  setScore(num) {
     this._score = num;
   }
 };
@@ -55,10 +55,10 @@ export let pages = {
     id: `artist`,
     title: `Кто исполняет эту песню?`,
     _melody: ``,
-    get melody () {
+    get melody() {
       return this._melody;
     },
-    set melody (url) {
+    set melody(url) {
       this._melody = url;
     },
     _answers: [
@@ -75,10 +75,10 @@ export let pages = {
         photo: `http://placehold.it/134x134`
       }
     ],
-    get answers () {
+    get answers() {
       return this._answers;
     },
-    set answer (item) {
+    set answer(item) {
       this._answers[0] = item;
     }
   },
