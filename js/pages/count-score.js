@@ -2,12 +2,11 @@ import {setArtistQuestion, artistEvents} from './artist/artist.js';
 import {pages, initialState} from '../data/data.js';
 import {renderScreen} from '../change-screen.js';
 import {winEvent} from './result/result.js';
-import {attemptEvent} from './result/attempts.js';
 import {timeoverEvent} from './result/timeover.js';
 import {genreEvents} from './genre/genre.js';
 
 export const countScore = (i) => {
-  if (i == 0) {
+  if (i === 0) {
     initialState.score = 1;
   } else if (initialState.mistakes === 2) {
     renderScreen(pages.attempts, timeoverEvent);
@@ -22,7 +21,7 @@ export const countScore = (i) => {
     return;
   } else {
     let screen = Math.ceil(Math.random() * 2);
-    if (screen == 2) {
+    if (screen === 2) {
       renderScreen(pages.genre, genreEvents);
     } else {
       setArtistQuestion();

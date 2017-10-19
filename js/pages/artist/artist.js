@@ -1,8 +1,4 @@
-import getElementFromTemplate from '../../append-tempate.js';
-import {renderScreen} from '../../change-screen.js';
-import renderGenre, {genreEvents} from './../genre/genre.js';
-import {initialState, pages, data} from '../../data/data.js';
-import artistLevel from './artist-level.js';
+import {pages, data} from '../../data/data.js';
 import {countScore} from '../count-score.js';
 
 export const setArtistQuestion = () => {
@@ -32,5 +28,3 @@ export const artistEvents = (artist) => {
     });
   });
 };
-
-export default renderArtist;

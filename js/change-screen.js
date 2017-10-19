@@ -1,4 +1,3 @@
-import {initialState} from './data/data.js';
 import artistLevel from './pages/artist/artist-level.js';
 import genreLevel from './pages/genre/genre-level.js';
 import welcomeLevel from './pages/welcome/welcome-level.js';
@@ -28,4 +27,3 @@ export let renderScreen = (page, callback) => {
   }
   callback(node);
 };
-export default changeScreen;
