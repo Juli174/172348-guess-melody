@@ -1,4 +1,5 @@
-import changeScreen from './change-screen.js';
-import welcome from './pages/welcome';
+import changeScreen, {renderScreen} from './change-screen.js';
+import {welcomeEvents} from './pages/welcome/welcome';
+import {pages} from './data/data.js';
 
-changeScreen(welcome);
+renderScreen(pages.welcome, welcomeEvents);
